@@ -1,13 +1,8 @@
 package cucumber.examples.java.calculator;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -26,9 +21,14 @@ public class RpnCalculatorStepdefs {
         calc.push("+");
     }
 
-    @Given("^I press (.+)$")
+    @When("^I press (.+)$")
     public void I_press(String what) {
         calc.push(what);
+    }
+
+    @When("^I enter (\\d+)$")
+    public void iEnter(int i) throws Throwable {
+        calc.push(i);
     }
 
     @Then("^the result is (\\d+)$")
