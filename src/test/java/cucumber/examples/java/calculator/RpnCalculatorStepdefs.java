@@ -21,8 +21,13 @@ public class RpnCalculatorStepdefs {
         calc.push("+");
     }
 
-    @When("^I press (.+)$")
+    @When("^(I press (/+))$")
     public void I_press(String what) {
+        calc.push(what);
+    }
+
+    @When("^(I press (/*))$")
+    public void I_press_star(String what) {
         calc.push(what);
     }
 

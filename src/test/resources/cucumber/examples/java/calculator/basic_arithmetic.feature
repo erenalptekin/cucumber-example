@@ -14,3 +14,9 @@ Feature: Basic Arithmetic
     And I enter 5
     And I press +
     Then the result is 7
+
+    Scenario: Multiply using Reverse Polish Notation
+      When I enter 4
+      And I enter 6
+      And I press *
+      Then the result is 24
